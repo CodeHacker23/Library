@@ -38,10 +38,13 @@ public class Menu {
         while (true) {
             System.out.println("1 - add book");
             System.out.println("2 - print all book");
-            System.out.println("3 - вывести список все книг по жанру");
-            System.out.println("4 - вывести информацию о книге по названию");
-            System.out.println("5 - вывести все книги по стоимости");
+
+            System.out.println("3 - вывести список все книг по жанру");// мои
+            System.out.println("4 - вывести информацию о книге по названию");//мои
+
+            System.out.println("5 - вывести все книги по стоимости");//
             System.out.println("6 - вывести все книг по году выпуска");
+
             System.out.println("7 - выйти");
 
             String answer = scanner.nextLine();
