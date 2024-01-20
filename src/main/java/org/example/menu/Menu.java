@@ -36,7 +36,6 @@ public class Menu {
     public void start() {
         initializeBooks();
         while (true) {
-            // удали строку из пункта 1 строку 123
             System.out.println("1 - add book");
             System.out.println("2 - print all book");
             System.out.println("3 - вывести список все книг по жанру");
