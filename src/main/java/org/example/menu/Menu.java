@@ -37,7 +37,7 @@ public class Menu {
         initializeBooks();
         while (true) {
             System.out.println("1 - add book");
-            System.out.println("2 - вывести список все книг");
+            System.out.println("2 - print all book");
             System.out.println("3 - вывести список все книг по жанру");
             System.out.println("4 - вывести информацию о книге по названию");
             System.out.println("5 - вывести все книги по стоимости");
