@@ -5,8 +5,8 @@ import org.example.entity.Book;
 import java.util.Scanner;
 
 public class Menu {
-    Scanner scanner = new Scanner(System.in);
-    Book[] books = new Book[100];
+   private Scanner scanner = new Scanner(System.in);
+   private Book[] books = new Book[100];
 
     public void initializeBooks() {
         books[0] = new Book("Айзек Азимов", "Я, робот", 25.99, 1950, " Научная фантастика");
