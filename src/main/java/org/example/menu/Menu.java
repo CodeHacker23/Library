@@ -132,12 +132,13 @@ public class Menu {
        // System.out.println("Cписок всех книг по жанру и названию ");
         Book book1 = new Book();
         System.out.println("Введите жанр книги: ");
-        Scanner csr = new Scanner(System.in);
-        String a =  csr.nextLine();
+
+        String ganre =  scanner.nextLine();
+
         boolean found = false;
         for (Book book : newBooks) {
-            if ( book != null && book.getGenre( ).equalsIgnoreCase(book.getGenre(  ))) {
-                System.out.println("Найдена книга: " + book.getTitle() + "Автор: " + "(" + book.getAuthor() + ")" + "Жанр: " + book.getGenre());
+            if ( book != null && book.getGenre( ).equalsIgnoreCase(ganre)) {
+                System.out.println("Найдена книга: " + book.getTitle() + "Автор: " + "(" + book.getAuthor() + ")" + " Жанр: " + book.getGenre());
                 found = true;
             }
         }
