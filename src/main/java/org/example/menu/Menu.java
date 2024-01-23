@@ -2,6 +2,7 @@ package org.example.menu;
 
 import org.example.entity.Book;
 
+import java.time.Year;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -58,10 +59,10 @@ public class Menu {
                 }
 
                 case "3" -> {
-                    //methods3();
+                    methods3();
                 }
                 case "4" -> {
-                    // methods4();
+                  methods4();
                 }
                 case "5" -> {
 //
@@ -127,30 +128,71 @@ public class Menu {
         }
     }
 
+    public void methods3() {
+       // System.out.println("Cписок всех книг по жанру и названию ");
+        Book book1 = new Book();
+        System.out.println("Введите жанр книги: ");
+        Scanner csr = new Scanner(System.in);
+        String a =  csr.nextLine();
+        boolean found = false;
+        for (Book book : newBooks) {
+            if ( book != null && book.getGenre( ).equalsIgnoreCase(book.getGenre(  ))) {
+                System.out.println("Найдена книга: " + book.getTitle() + "Автор: " + "(" + book.getAuthor() + ")" + "Жанр: " + book.getGenre());
+                found = true;
+            }
+        }
 
-//
+        if (!found) {
+            System.out.println("Книги по жанру '" + book1.getGenre() + " не найдены.");
+        }
+    }
+    public void methods4 (){
+        System.out.println("Введите название книги:");
+        String  a2 = scanner.nextLine();
+        boolean  van = false;
+        for (Book book : newBooks) {
+            if (book != null && book.getTitle().equalsIgnoreCase( a2)) {
+                book.info();
+                 van = true; // проверка на не найденую книгу
+                break;
+            }
+        }
+        if (! van) {
+            System.out.println("Книга с названием '" +  a2 + "' не найдена.");
+        }
+    }
+ }
 
-}
 
-//    public void methods3 (){
-//        System.out.println("Cписок всех книг по жанру и названию ");
-//        for (int i = 0; i < books.length; i++) {
-//            if(books[i] != null){
-//                System.out.println(books[i].getTitle() +  " " + books[i].getGenre());
-//            }
-//        }
-//    }
-//
-//    public void methods4 (){
-//        String name = scanner.nextLine();
-//        System.out.println("вывести информацию о книге по названию");
-//        System.out.println("=======================================");
-//        for (int i = 0; i < books.length; i++) {
-//            if ( name.equals(books[i].getTitle())) {
-//                System.out.println(books[i].getAuthor() + " " + books[i].getTitle() + " " + books[i].getPrice() + " " + books[i].getYear() + " " + books[i].getGenre());
-//                return;
-//            }
-//        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   public void methods4 (){
+////        String name = scanner.nextLine();
+////        System.out.println("вывести информацию о книге по названию");
+////        System.out.println("=======================================");
+////        for (int i = 0; i < books.length; i++) {
+////            if ( name.equals(books[i].getTitle())) {
+////                System.out.println(books[i].getAuthor() + " " + books[i].getTitle() + " " + books[i].getPrice() + " " + books[i].getYear() + " " + books[i].getGenre());
+////                return;
+////            }
+////        }
 //        System.out.println("Такой книги не существует, попробуйте еще раз! ");
 //    }
 //    public void methods5 (){ //вывести все книги по стоимости");

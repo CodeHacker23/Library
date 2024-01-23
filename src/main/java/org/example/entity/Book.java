@@ -12,6 +12,10 @@ public class Book {
     private int year; //год
     private String genre; // жанр
 
+    public Book() {
+
+    }
+
 
     public void info() {
         System.out.println("Автор: " + getAuthor());
@@ -20,8 +24,13 @@ public class Book {
         System.out.println("Год издания: " + getYear());
         System.out.println("Жанр: " + getGenre());
         System.out.println("--------------------------");
+
+
     }
 
+
+    public void compareTo() {
+    }
 }
 
 
