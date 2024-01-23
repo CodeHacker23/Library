@@ -43,7 +43,7 @@ public class Menu {
             System.out.println("6 - вывести все книг по году выпуска");
             System.out.println("7 - выйти");
 
-            String answer = scanner.nextLine();
+            //String answer = scanner.nextLine();
 
             switch (answer) {
                 case "1" -> {
