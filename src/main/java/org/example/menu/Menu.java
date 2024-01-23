@@ -9,7 +9,7 @@ public class Menu {
     Book[] books = new Book[100];
 
     public void initializeBooks() {
-        books[0] = new Book("Айзек Азимов", "Я, робот", 25.99, 1950, " Научная фантастика");
+        books[1] = new Book("Айзек Азимов", "Я, робот", 25.99, 1950, " Научная фантастика");
         books[1] = new Book("Александр Дюма", "Граф Монте-Кристо", 28.75, 1844, "Приключения");
         books[2] = new Book("Дж. Р. Р. Толкин", "Властелин колец", 35.50, 1954, "Фэнтези");
         books[3] = new Book("Харпер Ли", "Убить пересмешника", 18.75, 1960, "Роман");
@@ -43,7 +43,7 @@ public class Menu {
             System.out.println("6 - вывести все книг по году выпуска");
             System.out.println("7 - выйти");
 
-            //String answer = scanner.nextLine();
+            String answer = scanner.nextLine();
 
             switch (answer) {
                 case "1" -> {
