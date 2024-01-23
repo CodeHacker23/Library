@@ -60,19 +60,23 @@ public class Menu {
                     // methods4();
                 }
                 case "5" -> {
-                    System.out.println("Вывод книг в порядке возрастании цены нажмите: +" + "" +
-                            "\nВывод книг в порядке убывании цены  нажмите: - ");
-                    answer = scanner.nextLine();
-                    if (answer.equals("+")) {
-                        printPriceBookUp();
-                    } else if (answer.equals("-")) {
-                        printPriceBookDown();
-                    } else System.out.println("НЕ ВЕРНАЯ КОМАНДА!!! ВВЕДИТЕ ЗАНОВО!");
+                    while (true) {
+                        System.out.println("Вывод книг в порядке возрастании цены нажмите: +" + "" +
+                                "\nВывод книг в порядке убывании цены  нажмите: - ");
+                        answer = scanner.nextLine();
+                        if (answer.equals("+")) {
+                            printPriceBookUp5();
+                            break;
+                        } else if (answer.equals("-")) {
+                            printPriceBookDown5();
+                            break;
+                        } else System.out.println("НЕ ВЕРНАЯ КОМАНДА!!! ВВЕДИТЕ ЗАНОВО!");
 
 
+                    }
                 }
                 case "6" -> {
-
+                    printaYear6();
                 }
 
                 case "7" -> {
@@ -131,15 +135,7 @@ public class Menu {
     }
 
 
-    public void method5() {
-        for (Book i : books) {
-            if (i != null) {
-                System.out.println("Название книги : " + i.getTitle() + " Цена : " + i.getPrice() + "\n-------------");
-            }
-        }
-    }
-
-    public void printPriceBookDown() {
+    public void printPriceBookDown5() {
         System.out.println("Книги по стоимости в порядке уменьшении цены :");
         if (books != null) {
             // Сортировка пузырьком по цене от большей к меньшей
@@ -164,7 +160,7 @@ public class Menu {
         }
     }
 
-    public void printPriceBookUp() {
+    public void printPriceBookUp5() {
         System.out.println("Книги по стоимости в порядке увеличении цены цены :");
         if (books != null) {
             // Сортировка пузырьком по цене от большей к меньшей
@@ -189,6 +185,13 @@ public class Menu {
         }
     }
 
+    private void printaYear6() {
+        for (Book book : books) {
+            if (book != null) {
+                System.out.println("Название книги : " + book.getTitle() + " , Год  : " + book.getYear());
+            }
+        }
+    }
 }
 
 
