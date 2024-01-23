@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
    private Scanner scanner = new Scanner(System.in);
-   private Book[] books = new Book[100];
+   private Book[] books = new Book[120];
 
     public void initializeBooks() {
         books[0] = new Book("Айзек Азимов", "Я, робот", 25.99, 1950, " Научная фантастика");
