@@ -60,20 +60,7 @@ public class Menu {
                     // methods4();
                 }
                 case "5" -> {
-                    while (true) {
-                        System.out.println("Вывод книг в порядке возрастании цены нажмите: +" + "" +
-                                "\nВывод книг в порядке убывании цены  нажмите: - ");
-                        answer = scanner.nextLine();
-                        if (answer.equals("+")) {
-                            printPriceBookUp5();
-                            break;
-                        } else if (answer.equals("-")) {
-                            printPriceBookDown5();
-                            break;
-                        } else System.out.println("НЕ ВЕРНАЯ КОМАНДА!!! ВВЕДИТЕ ЗАНОВО!");
-
-
-                    }
+                    printBooksByPrice();
                 }
                 case "6" -> {
                     printaYear6();
@@ -86,6 +73,24 @@ public class Menu {
         }
 
 
+    }
+
+    public void printBooksByPrice() {
+        String answer;
+        while (true) {
+            System.out.println("Вывод книг в порядке возрастании цены нажмите: +" + "" +
+                    "\nВывод книг в порядке убывании цены  нажмите: - ");
+            answer = scanner.nextLine();
+            if (answer.equals("+")) {
+                printPriceBookUp5();
+                break;
+            } else if (answer.equals("-")) {
+                printPriceBookDown5();
+                break;
+            } else System.out.println("НЕ ВЕРНАЯ КОМАНДА!!! ВВЕДИТЕ ЗАНОВО!");
+
+
+        }
     }
 
 
