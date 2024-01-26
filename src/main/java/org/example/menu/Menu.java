@@ -29,7 +29,7 @@ public class Menu {
         books[16] = new Book("Иван Порубель", "Java. Методы программирования", 850.00, 2015, "Обучение");
         books[17] = new Book("Джошуа Блох", " Java. Эффективное программирование", 1150.00, 2014, " Техническая литература");
         books[18] = new Book("Игорь Блинов", "Основы Java", 950.00, 2020, "Обучение");
-        books[19] = new Book("Александр Зыбин", "Java. Методы программирования. 50 уроков", 1050.00, 2021, "Техническая литература");
+        books[19] = new Book("Александр Зыбин", "Java. Методы программирования. 50 уроков", 1050.00, 1950, "Техническая литература");
     }
 
 
@@ -198,13 +198,12 @@ public class Menu {
 
         while (true) {
             int answer;
-
             try {
-                answer = scanner.nextInt(); // Считываем введенное число
+                answer = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Ошибка: Введите корректное число.");
-                scanner.next(); // Очищаем буфер ввода от некорректных данных
-                continue; // Перезапускаем цикл для новой попытки ввода
+                scanner.next();
+                continue;
             }
 
             int coins = 0;
@@ -213,7 +212,7 @@ public class Menu {
                 if (book != null && answer == book.getYear()) {
                     coins++;
 //                    System.out.println("Название книги : " + book.getTitle() + " , Год  : " + book.getYear());
-                    flag = true; // Устанавливаем флаг, что найдена хотя бы одна книга
+                    flag = true;
                 }
             }
 
@@ -230,15 +229,13 @@ public class Menu {
                     }
                     flag = true;
                 }
-                System.out.println("Для выхода нажмите : выход ");
-                if (scanner.nextLine().equalsIgnoreCase("выход")) {
+                System.out.println("Для выхода в главное меню нажмите : выход ");
+                if (scanner.next().equalsIgnoreCase("выход")) {
                     break;
                 }
             }
 
 
         }
-
-
     }
 }
