@@ -17,7 +17,7 @@ public class AppTest
         Book book = new Book("Булгаков А М","Мастер и Маргарита",1190.20,1990, "Классика " );
         Book book2 = new Book("Булгаков А М","Мастер и Маргарита",1190.20,1990, "Классика ");
 
-        Book book3 = new Book("Булгаков");
+       // Book book3 = new Book("Булгаков");
         System.out.println(book.equals(book2));
         System.out.println(book);
 

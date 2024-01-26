@@ -2,11 +2,12 @@ package org.example.menu;
 
 import org.example.entity.Book;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-   private Scanner scanner = new Scanner(System.in);
-   private Book[] books = new Book[120];
+    private Scanner scanner = new Scanner(System.in);
+    private Book[] books = new Book[120];
 
     public void initializeBooks() {
         books[0] = new Book("Айзек Азимов", "Я, робот", 25.99, 1950, " Научная фантастика");
@@ -63,7 +64,7 @@ public class Menu {
                     printBooksByPrice();
                 }
                 case "6" -> {
-                    printaYear6();
+                    printBookBySelectYear600();
                 }
 
                 case "7" -> {
@@ -78,7 +79,7 @@ public class Menu {
     public void printBooksByPrice() {
         String answer;
         while (true) {
-            System.out.println("Вывод книг в порядке возрастании цены нажмите: +" + "" +
+            System.out.println("Вывод книг в порядке возрастании цены нажмите: +" +
                     "\nВывод книг в порядке убывании цены  нажмите: - ");
             answer = scanner.nextLine();
             if (answer.equals("+")) {
@@ -190,16 +191,54 @@ public class Menu {
         }
     }
 
-    private void printaYear6() {
-        for (Book book : books) {
-            if (book != null) {
-                System.out.println("Название книги : " + book.getTitle() + " , Год  : " + book.getYear());
+    private void printBookBySelectYear600() {
+        System.out.println("Введите год выпуска :");
+
+        boolean flag = false; // Флаг
+
+        while (true) {
+            int answer;
+
+            try {
+                answer = scanner.nextInt(); // Считываем введенное число
+            } catch (InputMismatchException e) {
+                System.out.println("Ошибка: Введите корректное число.");
+                scanner.next(); // Очищаем буфер ввода от некорректных данных
+                continue; // Перезапускаем цикл для новой попытки ввода
             }
+
+            int coins = 0;
+
+            for (Book book : books) {
+                if (book != null && answer == book.getYear()) {
+                    coins++;
+//                    System.out.println("Название книги : " + book.getTitle() + " , Год  : " + book.getYear());
+                    flag = true; // Устанавливаем флаг, что найдена хотя бы одна книга
+                }
+            }
+
+            if (coins == 0) {
+                System.out.println("По выбранному году книги нет ");
+            }
+
+            if (flag) {
+                System.out.println("Всего количество результатов : " + coins);
+                for (Book book : books) {
+                    if (book != null && answer == book.getYear()) {
+                        coins++;
+                        System.out.println("Название книги : " + book.getTitle() + " , Год  : " + book.getYear());
+                    }
+                    flag = true;
+                }
+                System.out.println("Для выхода нажмите : выход ");
+                if (scanner.nextLine().equalsIgnoreCase("выход")) {
+                    break;
+                }
+            }
+
+
         }
+
+
     }
 }
-
-
-
-
-
