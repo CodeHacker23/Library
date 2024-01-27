@@ -45,7 +45,7 @@ public class Menu {
             System.out.println("5 - вывести все книги по стоимости");//
             System.out.println("6 - вывести все книг по году выпуска");
 
-            System.out.println("7 - выйти");
+            System.out.println("7 - выйти !");
 
             String answer = scanner.nextLine();
 
