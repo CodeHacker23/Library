@@ -232,10 +232,8 @@ public class Menu {
                 System.out.println("Для выхода в главное меню нажмите : выход ");
                 if (scanner.next().equalsIgnoreCase("выход")) {
                     break;
-                }
+                }else printBookBySelectYear600();
             }
-
-
         }
     }
 }
